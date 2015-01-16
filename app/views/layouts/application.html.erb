@@ -1,40 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>gCampHayleyBlackstock</title>
+  <title>gCamp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">gCamp</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">gCamp</a>
+      </div>
+    </div>
+  </div>
 
-        </div><!--/.navbar-collapse -->
       </div>
     </nav>
 
 
-
-
     <div class="container">
       <%= yield %>
-      <!-- Example row of columns -->
+
       <div class="row">
         <div class="col-md-4">
           <p class="lead">
-            <img alt="Panel1" class="img-responsive" src="/assets/image2.jpg">
+            <%= image_tag "image3.jpg", class: "img-responsive" %>
           </p>
           <div class="panel panel-primary">
             <div class="panel-heading">Tasks</div>
@@ -45,7 +37,7 @@
         </div>
         <div class="col-md-4">
           <p class="lead">
-            <img alt="Panel2" class="img-responsive" src="/assets/image3.jpg">
+            <%= image_tag "image2.jpg", class: "img-responsive" %>
           </p>
           <div class="panel panel-primary">
             <div class="panel-heading">Documents</div>
@@ -60,7 +52,7 @@
         </div>
         <div class="col-md-4">
           <p class="lead">
-            <img alt="Panel3" class="img-responsive" src="/assets/image1.jpg">
+            <%= image_tag "image1.jpg", class: "img-responsive" %>
           </p>
           <div class="panel panel-primary">
             <div class="panel-heading">Comments</div>
