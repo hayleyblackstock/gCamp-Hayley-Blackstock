@@ -1,5 +1,61 @@
+<html>
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
-  <h1>gCamp</h1>
-  <p>Your life, organized.</p>
+<div class="container">
+<h1>gCamp</h1>
+<p>Your life, organized.</p>
 </div>
+</div>
+
+
+<div class="row">
+<div class="col-md-4">
+<p class="lead">
+<img alt="Panel1" class="img-responsive" <%= image_tag('image3.jpg') %>
+</p>
+<div class="panel panel-primary">
+<div class="panel-heading">Tasks</div>
+<div class="panel-body home-panel">
+<p>Grouped by projects and lists, just the way you like 'em</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<p class="lead">
+<img alt="Panel2" class="img-responsive" <%= image_tag('image2.jpg') %>
+</p>
+<div class="panel panel-primary">
+<div class="panel-heading">Documents</div>
+<div class="panel-body home-panel">
+<ul>
+<li>Upload</li>
+<li>Comment</li>
+<li>Revise</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<p class="lead">
+<img alt="Panel3" class="img-responsive" <%= image_tag('image1.jpg') %>
+</p>
+<div class="panel panel-primary">
+<div class="panel-heading">Comments</div>
+<div class="panel-body home-panel">
+<ul>
+<li>Comment on tasks and documents</li>
+<li>Get email notifications</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<hr>
+
+
+<% @quotes.each do |name, quote| %>
+<p>"<%= quote %>"</p>
+<p class="text-muted"><em>— <%= name %> </em></p>
+<% end %>

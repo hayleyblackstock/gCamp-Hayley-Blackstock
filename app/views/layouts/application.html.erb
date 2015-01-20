@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>gCamp</title>
+  <title>GCampHayleyBlackstock</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -16,77 +16,19 @@
     </div>
   </div>
 
-      </div>
-    </nav>
+  <div class="container">
+  <%= yield %>
 
 
-    <div class="container">
-      <%= yield %>
+</div> <!-- /container -->
 
-      <div class="row">
-        <div class="col-md-4">
-          <p class="lead">
-            <%= image_tag "image3.jpg", class: "img-responsive" %>
-          </p>
-          <div class="panel panel-primary">
-            <div class="panel-heading">Tasks</div>
-            <div class="panel-body home-panel">
-              <p>Grouped by projects and lists, just the way you like'em</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <p class="lead">
-            <%= image_tag "image2.jpg", class: "img-responsive" %>
-          </p>
-          <div class="panel panel-primary">
-            <div class="panel-heading">Documents</div>
-            <div class="panel-body home-panel">
-              <ul>
-                <li>Upload</li>
-                <li>Comment</li>
-                <li>Revise</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <p class="lead">
-            <%= image_tag "image1.jpg", class: "img-responsive" %>
-          </p>
-          <div class="panel panel-primary">
-            <div class="panel-heading">Comments</div>
-            <div class="panel-body home-panel">
-              <ul>
-                <li>Comment on tasks and documents</li>
-                <li>Get email notifications</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <p>“gCamp has changed my life!  It's the best tool I've ever used.”</p>
-      <p class="text-muted"><em>— Cayla Hayes</em></p>
-      <p>“Before gCamp I was a disorderly slob.  Now I'm more organized than I've ever been”</p>
-      <p class="text-muted"><em>— Leta Jaskolski</em></p>
-      <p>“Don't hesitate - sign up right now! You'll never be the same.”</p>
-      <p class="text-muted"><em>— Lavern Upton</em></p>
-      <hr>
-
-
-    </div> <!-- /container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-
-
-
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="../../dist/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
 </body>
 </html>
