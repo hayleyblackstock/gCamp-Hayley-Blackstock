@@ -1,9 +1,13 @@
 <p id ="top" </p>
+
 <div class="page-header">
   <h1>Frequently Asked Questions</h1>
-<div class="col-md-12">
+</div>
 
-<div page header>
+<div class="row">
+<div class="col-md-6">
+
+<div>
 <ul>
 <% @common_questions.each do |common_question| %>
 <li><%= link_to common_question.question, "##{common_question.slug}" %></li>
@@ -12,9 +16,11 @@
 </div>
 
 <% @common_questions.each do |common_question| %>
-<h1 id="<%= common_question.slug %>"><strong>  <%= common_question.question %></strong></h1>
+<p id="<%= common_question.slug %>"><strong>  <%= common_question.question %></strong></p>
 
 <p>  <%= common_question.answer %> </p>
 <%= link_to "top", "#top" %>
 
   <% end %>
+</div>
+</div>

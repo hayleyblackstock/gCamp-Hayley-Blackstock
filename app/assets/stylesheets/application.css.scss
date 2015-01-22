@@ -1,8 +1,9 @@
 @import "bootstrap-sprockets";
  @import "bootstrap";
 
- body {
-   padding-top: 50px;
+ .row {
+   margin-left: -15px;
+   margin-right: -15px;
  }
 
  .page-header {
