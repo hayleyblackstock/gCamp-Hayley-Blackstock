@@ -16,7 +16,7 @@
 </div>
 
 <% @common_questions.each do |common_question| %>
-<p id="<%= common_question.slug %>"><strong>  <%= common_question.question %></strong></p>
+<p id="<%= common_question.slug %>"><h5>  <%= common_question.question %></h5></p>
 
 <p>  <%= common_question.answer %> </p>
 <%= link_to "top", "#top" %>
