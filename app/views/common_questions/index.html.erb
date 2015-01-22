@@ -1,0 +1,18 @@
+<p id ="top" </p>
+<div class="page-header">
+  <h1>Frequently Asked Questions</h1>
+<div class="col-md-12">
+
+<ul></ul>
+<% @common_questions.each do |common_question| %>
+<li><%= link_to common_question.question, "##{common_question.slug}" %></li>
+    <% end %>
+
+
+<% @common_questions.each do |common_question| %>
+<p id="<%= common_question.slug %>"><strong>  <%= common_question.question %></strong></p>
+
+<p>  <%= common_question.answer %> </p>
+<%= link_to "top", "#top" %>
+
+  <% end %>

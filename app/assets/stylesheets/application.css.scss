@@ -5,6 +5,12 @@
    padding-top: 50px;
  }
 
+ .page-header {
+   padding-bottom: 9px;
+   margin: 40px 0 20px;
+   border-bottom: 1px solid #eeeeee;
+ }
+
  .img-footer {
    max-width: 2em;
    max-height: 2em;
@@ -26,4 +32,10 @@
 
  body {
    padding-top: 60px;
+ }
+
+ footer {
+   padding: 1em 0;
+   margin-top: 1em;
+   border-top: 1px solid #ccc;
  }
