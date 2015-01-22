@@ -3,14 +3,16 @@
   <h1>Frequently Asked Questions</h1>
 <div class="col-md-12">
 
-<ul></ul>
+<div page header>
+<ul>
 <% @common_questions.each do |common_question| %>
 <li><%= link_to common_question.question, "##{common_question.slug}" %></li>
     <% end %>
-
+</ul>
+</div>
 
 <% @common_questions.each do |common_question| %>
-<p id="<%= common_question.slug %>"><strong>  <%= common_question.question %></strong></p>
+<h1 id="<%= common_question.slug %>"><strong>  <%= common_question.question %></strong></h1>
 
 <p>  <%= common_question.answer %> </p>
 <%= link_to "top", "#top" %>
