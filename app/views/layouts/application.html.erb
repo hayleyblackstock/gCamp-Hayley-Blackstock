@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GCampHayleyBlackstock</title>
+  <title>gCampHayleyBlackstock</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -17,37 +17,37 @@
   </div>
 
   <div class="container">
-  <%= yield %>
+    <%= yield %>
 
-  <footer>
-    <div class="row">
-      <div class="col-md-6">
-        <a href="/about">About</a>
-        |
-        <a href="/terms">Terms</a>
-        |
-        <a href="/faq">FAQ</a>
-        |
-        <a href="/tasks">Tasks</a>
+    <footer>
+      <div class="row">
+        <div class="col-md-6">
+          <a href="/about">About</a>
+          |
+          <a href="/terms">Terms</a>
+          |
+          <a href="/faq">FAQ</a>
+          |
+          <a href="/tasks">Tasks</a>
+        </div>
+
+        <div class="col-md-6 text-right">
+          <a href="https://www.linkedin.com/in/hayleyblackstock">
+            <img alt="LinkedIn" class="img-footer" <%= image_tag('LinkedIn.png') %>
+          </a>
+          <a href="https://github.com/hayleyblackstock">
+            <img alt="Github" class="img-footer" <%= image_tag('GitHub.png') %>
+          </a>
+          <a href="https://twitter.com/hkblackstock">
+            <img alt="Twitter" class="img-footer" <%= image_tag('Twitter.png') %>
+          </a>
+          <a href="https://students.gschool.it/cohorts/9/students/204">
+            <img alt="Galvanize g" class="img-footer" <%= image_tag('gSchool.png') %>
+          </a>        </div>
+        </div>
+
       </div>
 
-      <div class="col-md-6 text-right">
-        <a href="https://www.linkedin.com/in/hayleyblackstock">
-          <img alt="LinkedIn" class="img-footer" <%= image_tag('LinkedIn.png') %>
-        </a>
-        <a href="https://github.com/hayleyblackstock">
-          <img alt="Github" class="img-footer" <%= image_tag('GitHub.png') %>
-        </a>
-        <a href="https://twitter.com/hkblackstock">
-          <img alt="Twitter" class="img-footer" <%= image_tag('Twitter.png') %>
-        </a>
-        <a href="https://students.gschool.it/cohorts/9/students/204">
-          <img alt="Galvanize g" class="img-footer" <%= image_tag('gSchool.png') %>
-        </a>        </div>
-      </div>
 
-</div>
-
-
-</body>
-</html>
+    </body>
+    </html>
