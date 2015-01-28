@@ -1,21 +1,57 @@
-<%= form_for(@task) do |f| %>
-  <% if @task.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+<%= form_for(@task, html: {class:"form-horizontal"}) do |f| %>
+<% if @task.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
 
-      <ul>
-      <% @task.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% @task.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
+<div class="form-group">
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <div class="control-label col-md-2">
+      <%= f.label :description %>
+    </div>
+    <div class="col-md-4">
+      <%= f.text_field :description, class: "form-control"%>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+</div>
+
+<div class="form-group">
+  <div class="field">
+    <div class="control-label col-md-2">
+      <%= f.label :due %>
+    </div>
+    <div class="col-md-4">
+      <%= f.date_select :due, class: "form-control"%>
+    </div>
   </div>
+</div>
+
+<% if @task.description !=nil %>
+<div class="form-group">
+  <label class="control-label col-md-2">
+    Completed
+  </label>
+        <div class="col-md-4">
+          <%= f.check_box(:completed) %>
+
+  </div>
+  </div>
+<% end %>
+
+<div class="form-group">
+  <div class="col-md-4 col-md-offset-2">
+    <div class="action">
+      <%= f.submit "Create Task", class:"btn btn-primary"%>
+      <%= link_to 'Cancel', tasks_path, class:"btn btn-default" %>
+    </div>
+  </div>
+</div>
+
 <% end %>

@@ -1,9 +1,18 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <div class="pull-right">
+    <%= link_to 'Edit', edit_task_path(@task), :class => "btn btn-info" %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @task.description %>
-</p>
+</div>
+<h1><%= @task.description %></h1>
+</div>
 
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+
+<div class="breadcrumb">
+  <li><a href="/tasks">Tasks</a></li>
+  <li class="active"><%= @task.description %></li>
+</div>
+
+<div>
+<strong>Due On:</strong>
+<%= @task.due %>
+</div>
