@@ -2,6 +2,15 @@ gCamp project
 
 == README
 
+[View on Heroku](http://https://agile-wave-2315.herokuapp.com/)
+
+To install:
+
+```
+bundle
+rake db:create db:migrate db:seed
+rails s
+```
 
 * Ruby version
   2.2.0
