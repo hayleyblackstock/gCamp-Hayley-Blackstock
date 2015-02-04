@@ -44,7 +44,7 @@
       <% if @user.first_name == nil %>
       <%= link_to 'Cancel', users_path, class:"btn btn-default" %>
       <% else %>
-      <%= link_to 'Delete User', users_path, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+      <%= link_to 'Destroy', user_path, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
       <%= link_to 'Cancel', users_path, class:"btn btn-default" %>
       <% end %>
     </div>
