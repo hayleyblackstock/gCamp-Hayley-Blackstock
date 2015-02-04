@@ -5,7 +5,7 @@
   <h1>Users</h1>
 </div>
 
-<table class=table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -17,9 +17,11 @@
   <tbody>
     <% @users.each do |user| %>
     <tr>
-      <td><%= user.full_name %></td>
+      <td><%= link_to user.full_name, user %></td>
       <td><%= mail_to user.email%></td>
       <td class="text-right">
+        <%= link_to 'Edit', edit_user_path(user), :class => "btn btn-info" %>
+        <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
       </td>
     </tr>
     <% end %>

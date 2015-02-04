@@ -1,32 +1,53 @@
 class UsersController < ApplicationController
 
-def index
-  @users = User.all
-end
+  def index
+    @users = User.all
+  end
 
-def show
-end
+  def show
+    @user = User.find(params[:id])
+  end
 
-def new
-  @user = User.new
-end
+  def new
+    @user = User.new
+  end
 
+  def edit
+    @user = User.find(params[:id])
+  end
 
-def create
-  @user = User.new(user_params)
-  respond_to do |format|
+  def create
+    @user = User.new(user_params)
     if @user.save
-      format.html { redirect_to users_path, notice: 'User was successfully created.' }
-      format.json { render :show, status: :created, location: @user }
+      redirect_to users_path, notice: 'User was successfully created.'
     else
-      format.html { render :new }
-      format.json { render json: @user.errors, status: :unprocessable_entity }
+      render :new
     end
   end
-end
-end
 
-private
-def user_params
-  params.require(:user).permit(:first_name, :last_name, :email)
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to users_path, notice: 'User was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to users_path, notice: 'User was successfully destroyed.'
+  end
+
+  private
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+   def user_params
+    params.require(:user).permit(:first_name, :last_name, :email)
+  end
+
 end
