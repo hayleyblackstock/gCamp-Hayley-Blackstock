@@ -1,7 +1,7 @@
 <div class="page-header">
   <div class="pull-right">
     <%= link_to 'Edit', edit_project_path(@project), :class => "btn btn-info" %>
-    <%= link_to 'Delete', project_path, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+    <%= link_to 'Destroy', project_path, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
   </div>
   <h1><%= @project.name %></h1>
 </div>

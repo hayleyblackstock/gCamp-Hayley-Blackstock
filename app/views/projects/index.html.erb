@@ -19,7 +19,7 @@
       <td><%= link_to project.name, project %></td>
       <td class="text-right">
         <%= link_to 'Edit', edit_project_path(project), :class => "btn btn-info" %>
-        <%= link_to 'Delete', projects_path, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+        <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
       </td>
     </tr>
     <% end %>
