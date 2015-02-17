@@ -1,4 +1,16 @@
 <%= form_for(@user, html: {class:"form-horizontal"}) do |f| %>
+<% if @user.errors.any? %>
+<div id="error_explanation">
+<div class = "alert alert-danger"><h4><%= pluralize(@user.errors.count, "error") %> prohibited this task from being saved:</h4>
+
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+</div>
 
 <div class="form-group">
   <div class="field">
