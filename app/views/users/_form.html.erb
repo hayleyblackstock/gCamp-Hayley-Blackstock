@@ -1,16 +1,16 @@
 <%= form_for(@user, html: {class:"form-horizontal"}) do |f| %>
 <% if @user.errors.any? %>
 <div id="error_explanation">
-<div class = "alert alert-danger"><h4><%= pluralize(@user.errors.count, "error") %> prohibited this task from being saved:</h4>
+  <div class = "alert alert-danger"><h4><%= pluralize(@user.errors.count, "error") %> prohibited this task from being saved:</h4>
 
-  <ul>
-    <% @user.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>
 <% end %>
-</div>
 
 <div class="form-group">
   <div class="field">
@@ -44,6 +44,7 @@
     </div>
   </div>
 </div>
+
 
 <div class="form-group">
   <div class="col-md-4 col-md-offset-2">
