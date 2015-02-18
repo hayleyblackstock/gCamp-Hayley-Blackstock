@@ -1,16 +1,6 @@
 <%= form_for(@task, html: {class:"form-horizontal"}) do |f| %>
-<% if @task.errors.any? %>
-<div id="error_explanation">
-  <div class ="alert alert-danger"><h4><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
 
-  <ul>
-    <% @task.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
-</div>
-<% end %>
+<%= render partial: "shared/form", locals: {object: @task} %>
 
 <div class="form-group">
   <div class="field">
