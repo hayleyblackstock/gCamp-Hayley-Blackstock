@@ -7,7 +7,9 @@
       <h1> Sign up for gCamp! </h1>
     </div>
 
-    <%= render partial: "shared/form", locals: {object: @user} %>
+    <% if @sign_in_error %>
+    <div class= "alert alert-danger"><%= @sign_in_error  %></div>
+    <% end %>
 
 
     <div class="form-group">

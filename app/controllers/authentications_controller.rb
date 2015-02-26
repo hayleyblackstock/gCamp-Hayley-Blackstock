@@ -10,7 +10,7 @@ def create
     session[:user_id] = @user.id
     redirect_to root_path, notice: 'Welcome back to gCamp!'
   else
-    @user.errors[:base] << "Invalid email / password"
+    @sign_in_error = "Username / password combination is invalid"
     render :new
   end
 end
