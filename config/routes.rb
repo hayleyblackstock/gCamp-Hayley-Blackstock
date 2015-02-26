@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
 
+  root 'welcome#index'
+
   resources :tasks
   resources :users
   resources :projects
 
-  #root 'welcome#index'
+  get '/signup' => 'registrations#new', as: :signup
+  post '/signup' => 'registrations#create'
+  get '/signin' => 'authentications#new'
+  post '/signin' => 'authentications#create'
+  get '/signout' => 'authentications#destroy'
 
 get '/' => 'welcome#index'
 

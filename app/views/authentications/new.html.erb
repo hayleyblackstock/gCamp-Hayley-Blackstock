@@ -1,0 +1,43 @@
+<div class = "container">
+  <div class="well col-md-offset-3 col-md-6 col-md-offset-3">
+
+    <%= form_for "/signin" , class:"form-horizontal" do %>
+
+    <div class="page-header">
+      <h1> Sign up for gCamp! </h1>
+    </div>
+
+    <%= render partial: "shared/form", locals: {object: @user} %>
+
+
+    <div class="form-group">
+      <div class="field">
+        <div class="control-label">
+          <%= label_tag :user_name %>
+        </div>
+      </div>
+      <div>
+        <%= text_field_tag :user_name, nil, class:"form-control"  %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="field">
+        <div class="control-label">
+          <%= label_tag :password %>
+        </div>
+      </div>
+      <div>
+        <%= password_field_tag :password, nil, class:"form-control"  %>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <div class="action">
+        <%= submit_tag nil, class:"btn btn-primary"  %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
