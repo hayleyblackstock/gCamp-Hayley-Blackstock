@@ -5,8 +5,8 @@ def new
 end
 
 def create
-  @user = User.find_by(email: params[:user][:email])
-  if @user && @user.authenticate(params[:user][:password])
+  @user = User.find_by_email(params[:email])
+  if @user && @user.authenticate(params[:password])
     session[:user_id] = @user.id
     redirect_to root_path, notice: 'Welcome back to gCamp!'
   else
@@ -14,6 +14,7 @@ def create
     render :new
   end
 end
+
 
 def destroy
   session.destroy
