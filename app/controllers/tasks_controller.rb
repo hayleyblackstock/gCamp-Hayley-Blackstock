@@ -10,10 +10,10 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
 
-  def show
-    @project = Project.find(params[:project_id])
-    @task = Task.find(task_params)
-  end
+    def show
+      @project = Project.find(params[:project_id])
+      @task = @project.tasks.find(params[:id])
+    end
 
   def new
     @project = Project.find(params[:project_id])
