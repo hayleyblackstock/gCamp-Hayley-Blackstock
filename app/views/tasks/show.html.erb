@@ -8,7 +8,7 @@
 
 
 <div class="breadcrumb">
-  <li><a href="/tasks">Tasks</a></li>
+  <li><a><%= link_to "Tasks", project_tasks_path(@project, @task)%></a></li>
   <li class="active"><%= @task.description %></li>
 </div>
 
