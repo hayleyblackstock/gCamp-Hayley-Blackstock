@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 
   resources :tasks
   resources :users
-  resources :projects
+
+  resources :projects do
+    resources :tasks
+  end
 
   get '/signup' => 'registrations#new', as: :signup
   post '/signup' => 'registrations#create'

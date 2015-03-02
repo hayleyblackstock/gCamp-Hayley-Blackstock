@@ -1,4 +1,4 @@
-<%= form_for(@task, html: {class:"form-horizontal"}) do |f| %>
+<%= form_for ([@project, @task]), html: {class:"form-horizontal"} do |f| %>
 
 <%= render partial: "shared/form", locals: {object: @task} %>
 
@@ -40,7 +40,7 @@
   <div class="col-md-4 col-md-offset-2">
     <div class="action">
       <%= f.submit class:"btn btn-primary"%>
-      <%= link_to 'Cancel', tasks_path, class:"btn btn-default" %>
+      <%= link_to 'Cancel', project_tasks_path, class:"btn btn-default" %>
     </div>
   </div>
 </div>
