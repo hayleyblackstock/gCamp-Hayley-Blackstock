@@ -4,6 +4,13 @@ describe 'User can CRUD projects' do
 
   scenario 'User can create a project' do
     visit '/'
+    click_on "Sign Up"
+    fill_in 'user[first_name]', with: "Hayley"
+    fill_in 'user[last_name]', with: "Blackstock"
+    fill_in 'user[email]', with: "hayleyblackstock@gmail.com"
+    fill_in 'user[password]', with: "test"
+    fill_in 'user[password_confirmation]', with: "test"
+    click_on "Create User"
 
     click_on "Projects"
 
@@ -18,6 +25,15 @@ describe 'User can CRUD projects' do
   end
 
   scenario 'User can view a show page for a project' do
+    visit '/'
+    click_on "Sign Up"
+    fill_in 'user[first_name]', with: "Hayley"
+    fill_in 'user[last_name]', with: "Blackstock"
+    fill_in 'user[email]', with: "hayleyblackstock@gmail.com"
+    fill_in 'user[password]', with: "test"
+    fill_in 'user[password_confirmation]', with: "test"
+    click_on "Create User"
+
     visit '/projects'
 
     click_on "New Project"
@@ -32,6 +48,15 @@ describe 'User can CRUD projects' do
   end
 
   scenario 'User can edit a project' do
+    visit '/'
+    click_on "Sign Up"
+    fill_in 'user[first_name]', with: "Hayley"
+    fill_in 'user[last_name]', with: "Blackstock"
+    fill_in 'user[email]', with: "hayleyblackstock@gmail.com"
+    fill_in 'user[password]', with: "test"
+    fill_in 'user[password_confirmation]', with: "test"
+    click_on "Create User"
+
   @project = Project.create(name: "Test")
 
     visit '/projects'
@@ -49,6 +74,15 @@ describe 'User can CRUD projects' do
   end
 
   scenario 'User can delete a project' do
+    visit '/'
+    click_on "Sign Up"
+    fill_in 'user[first_name]', with: "Hayley"
+    fill_in 'user[last_name]', with: "Blackstock"
+    fill_in 'user[email]', with: "hayleyblackstock@gmail.com"
+    fill_in 'user[password]', with: "test"
+    fill_in 'user[password_confirmation]', with: "test"
+    click_on "Create User"
+
     @project = Project.create(name: "Test")
 
     visit '/projects'
