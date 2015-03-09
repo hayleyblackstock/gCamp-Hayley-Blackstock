@@ -10,15 +10,17 @@
     <tr>
       <th>Description</th>
       <th>Due On</th>
+      <th>Completed</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @tasks.each do |task| %>
+    <% @project.tasks.each do |task| %>
       <tr>
         <td><%= link_to task.description, project_task_path(@project, task) %></td>
-        <td><%= link_to task.due, task %></td>
+        <td><%= task.due %></td>
+        <td><%= task.completed %></td>
         <td class="text-right">
         <%= link_to 'Edit', edit_project_task_path(@project, task), :class => "btn btn-info" %>
         <%= link_to 'Destroy', project_task_path(@project, task), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
