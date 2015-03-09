@@ -5,11 +5,11 @@ class ProjectsController < ApplicationController
     def index
       @projects = Project.all
       @tasks = Task.all
+      @memberships = Membership.all
     end
 
     def show
       @project = Project.find(params[:id])
-      @tasks = Task.all
     end
 
     def new
