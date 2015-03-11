@@ -14,5 +14,5 @@
 
 
 <!-- <%= link_to pluralize(@project.tasks.count, "task"), project_tasks_path(@project)  %> -->
-<div><%= link_to "#{@project.tasks.count} #{"Tasks"}", project_tasks_path(@project) %></div>
-<div><%= link_to "#{@project.memberships.count} #{"Members"}", project_memberships_path(@project) %></div>
+<div><%= link_to pluralize(@project.tasks.count, "Task"), project_tasks_path(@project, @task)%></div>
+<div><%= link_to pluralize(@project.memberships.count, "Member"), project_memberships_path(@project, @membership)%></div>

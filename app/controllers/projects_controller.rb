@@ -4,8 +4,6 @@ class ProjectsController < ApplicationController
 
     def index
       @projects = Project.all
-      @tasks = Task.all
-      @memberships = Membership.all
     end
 
     def show
