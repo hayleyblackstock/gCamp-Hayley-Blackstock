@@ -5,6 +5,12 @@
 <h1>Tasks for <%=@project.name%></h1>
 </div>
 
+<div class="breadcrumb">
+  <li><a href="/projects">Projects</a></li>
+  <li><a><%= link_to @project.name, project_path(@project)%></a></li>
+  <li class="active">Tasks</li>
+</div>
+
 <table class="table table-striped">
   <thead>
     <tr>
