@@ -20,7 +20,6 @@ class TasksController < ApplicationController
     @project = Project.find(params[:project_id])
     @task = Task.new(task_params)
     @task.project_id = @project.id
-
     if @task.save
       redirect_to project_tasks_path(@project), notice: "Task was successfully created!"
     else
@@ -47,7 +46,7 @@ class TasksController < ApplicationController
     @project = Project.find(params[:project_id])
     @task.project_id = params[:project_id]
     @task.destroy
-    redirect_to project_tasks_path(@project), notice: "Task was successfully destroyed!"
+    redirect_to project_tasks_path(@project), alert: "Task was successfully destroyed!"
   end
 
   private

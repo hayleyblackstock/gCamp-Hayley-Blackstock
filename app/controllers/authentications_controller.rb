@@ -18,7 +18,7 @@ end
 
 def destroy
   session.destroy
-  redirect_to root_path, notice: "You are successfully signed out! Come back soon!"
+  redirect_to root_path, alert: "You are successfully signed out! Come back soon!"
 end
 
 end

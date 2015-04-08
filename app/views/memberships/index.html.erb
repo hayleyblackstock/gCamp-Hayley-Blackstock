@@ -12,13 +12,18 @@
 
 <tbody>
   <% @memberships.each do |membership| %>
-  <tr>
-    <td><%= link_to @user.name %></td>
-      <%= link_to 'Edit', edit_project_path(project), :class => "btn btn-info" %>
-      <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
-    </td>
-  </tr>
+  <%= form_for [@project, membership] do |f| %>
+
+    <div class="form-inline"><%= link_to membership.user.full_name %>
+      <%= f.select(:role, [["Member", :member],["Owner", :owner]], {include_blank: false}, {class:"form-control"}) %>
+      <%= f.submit "Update", method: :update, class:"btn btn-info" %>
+      <%= link_to '', project_membership_path(@project, membership), method: :delete, data: { confirm: 'Are you sure?' }, :class => "glyphicon glyphicon-remove" %>
+
+    </div><br>
+
   <% end %>
+  <% end %>
+
 </tbody>
 </table>
 
