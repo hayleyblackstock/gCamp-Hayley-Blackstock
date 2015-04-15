@@ -79,7 +79,7 @@ require 'rails_helper'
 
     click_on "Cancel"
 
-    click_on "Destroy"
+    click_on "Delete"
 
     expect(page).to have_content("Task was successfully destroyed.")
 

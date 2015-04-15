@@ -96,7 +96,7 @@ describe 'User can CRUD Users' do
     click_on "Create User"
     click_on "Users"
 
-    click_on "Destroy"
+    click_on "Delete"
 
     expect(page).to have_content("User was successfully destroyed.")
 

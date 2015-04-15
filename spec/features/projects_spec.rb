@@ -87,7 +87,7 @@ describe 'User can CRUD projects' do
 
     visit '/projects'
 
-    click_on "Destroy"
+    click_on "Delete"
 
     expect(page).to have_content("Project was successfully Destoryed.")
   end
