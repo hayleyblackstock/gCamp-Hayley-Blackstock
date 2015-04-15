@@ -4,11 +4,16 @@ class TasksController < ApplicationController
 
   def index
     @project = Project.find(params[:project_id])
+    @comments = Comment.all
+    @task = Task.new
+    @tasks = Task.all
   end
 
   def show
     @project = Project.find(params[:project_id])
     @task = @project.tasks.find(params[:id])
+    @comments = Comment.all
+    @comment = Comment.new
   end
 
   def new
@@ -57,4 +62,9 @@ class TasksController < ApplicationController
   def task_params
     params.require(:task).permit(:description, :due, :completed, :project_id)
   end
+
+  def comment_params
+    params.require(:comment).permit(:description, :task_id, :user_id)
+  end
+
 end
