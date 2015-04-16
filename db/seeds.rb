@@ -12,4 +12,12 @@ User.create!(first_name: "Admin",
              email: "admin@example.com",
              password: "password",
              password_confirmation: "password",
-             role: "admin")
+             admin: true)
+
+
+User.create!(first_name: "Hayley",
+               last_name: "Blackstock",
+              email: "hayleyblackstock@gmail.com",
+              password: "password",
+              password_confirmation: "password",
+              admin: false)

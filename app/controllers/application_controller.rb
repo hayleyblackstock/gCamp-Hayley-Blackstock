@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 
   def current_role
     if session[:user_id]
-      @current_role ||= User.find(session[:user_id]).role
+      @current_role = User.find_by_id(session[:user_id]).admin
     else
       @current_role = "visitor"
     end
@@ -26,8 +26,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_role
 
   def admin_user
-    if current_role != "admin"
-      redirect_to root_path, alert: "You don't have access!"
+    if current_role != true
+      redirect_to (:back), alert: "You don't have admin rights!"
     end
   end
   helper_method :admin_user
