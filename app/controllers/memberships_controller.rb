@@ -1,5 +1,6 @@
 class MembershipsController < ApplicationController
   before_action :authenticate
+  before_action :set_project
 
   def index
     @project = Project.find(params[:project_id])
