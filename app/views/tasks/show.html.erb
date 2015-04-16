@@ -26,7 +26,11 @@
 <% @task.comments.each do |comment| %>
 <div class="row">
   <div class="col-md-3">
+    <% if @comment.user == nil %>
+    Deleted User
+    <% else %>
     <%= link_to User.find(comment.user_id).full_name, user_path(comment.user_id) %>
+<% end %>
 </div>
 
 <div class="col-md-9">
