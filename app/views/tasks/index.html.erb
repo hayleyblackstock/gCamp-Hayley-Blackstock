@@ -24,7 +24,7 @@
   <tbody>
     <% @project.tasks.each do |task| %>
       <tr>
-        <td><%= link_to task.description, project_task_path(@project, task) %></td>
+        <td><%= link_to task.description, project_task_path(@project, task) %> <div class="badge"> <%= Comment.where(:task_id => task.id).count %></div></td>
         <td><%= task.due %></td>
         <td><%= task.completed %></td>
         <td class="text-right">

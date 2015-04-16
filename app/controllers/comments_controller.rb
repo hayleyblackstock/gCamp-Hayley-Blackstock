@@ -1,9 +1,12 @@
 class CommentsController < ApplicationController
   before_action :authenticate
+  before_action :set_project, :set_task
 
   def index
     @project = Project.find(params[:project_id])
     @task = Task.find(params[:task_id])
+    @comment = Comment.new
+    @comments = Comment.all
   end
 
   def show
@@ -19,13 +22,11 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @project = Project.find(params[:project_id])
-    @task = Task.find(params[:task_id])
-    @comment = Comment.new(comment_params)
-    @comment.task = @task
-    @comment.user = current_user
+    @comment = Comment.create(comment_params)
+    @comment.task_id = @task.id
+    @comment.user_id = current_user.id
     if @comment.save
-      redirect_to (:back), notice: "Your comment was successfully added!"
+      redirect_to project_task_path(@project, @task), notice: "Your comment was successfully added!"
     else
       render :new
     end
@@ -35,5 +36,13 @@ private
   def comment_params
     params.require(:comment).permit(:description, :task_id, :user_id)
   end
+
+def set_task
+  @task = Task.find(params[:task_id])
+end
+
+def set_project
+  @project = Project.find(params[:project_id])
+end
 
 end

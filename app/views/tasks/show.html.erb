@@ -26,7 +26,7 @@
 <% @task.comments.each do |comment| %>
 <div class="row">
   <div class="col-md-3">
-    <%= link_to comment.user.full_name, user_path(@user) %>
+    <%= link_to User.find(comment.user_id).full_name, user_path(comment.user_id) %>
 </div>
 
 <div class="col-md-9">
@@ -42,7 +42,7 @@
 <% end %>
 
 
-<%= form_for [@task, @comment], html: {class:"form-horizontal"} do |f| %>
+<%= form_for [@project, @task, @comment], html: {class:"form-horizontal"} do |f| %>
 <div class="form-group">
   <div class="field">
     <div class="col-md-9 col-md-offset-3">

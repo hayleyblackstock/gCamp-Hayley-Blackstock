@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   resources :tasks
   resources :users
 
-  resources :projects do
-    resources :tasks
+  resources :users
+    resources :projects do
+      resources :tasks do
+        resources :comments
+      end
     end
-    resources :tasks do
-    resources :comments
-  end
 
     resources :projects do
       resources :memberships
