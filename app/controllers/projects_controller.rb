@@ -25,6 +25,7 @@ class ProjectsController < ApplicationController
       else
         render :new
       end
+      @membership = Membership.create(project_id: @project.id, user_id: current_user.id, role: 1)
     end
 
     def update

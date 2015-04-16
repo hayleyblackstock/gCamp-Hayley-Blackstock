@@ -29,7 +29,8 @@
         <td><%= task.completed %></td>
         <td class="text-right">
         <%= link_to 'Edit', edit_project_task_path(@project, task), :class => "btn btn-info" %>
-        <%= link_to 'Delete', project_task_path(@project, task), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+        <%= link_to '', project_task_path(@project, task), method: :delete, data: { confirm: 'Are you sure?' }, :class => "glyphicon glyphicon-remove" %>
+
         </td>
       </tr>
     <% end %>
