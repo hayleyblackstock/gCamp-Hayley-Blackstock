@@ -14,13 +14,13 @@
   </thead>
 
   <tbody>
-    <% @projects.each do |project| %>
+    <% if current_user %>
+    <% current_user.projects.each do |project| %>
     <tr>
       <td><%= link_to project.name, project %></td>
       <td><%= link_to pluralize(project.tasks.count, "Task"), project_tasks_path(project, @task)%></td>
     </tr>
+<% end %>
     <% end %>
   </tbody>
 </table>
-
-<br>
