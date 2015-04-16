@@ -1,10 +1,10 @@
 class ProjectsController < ApplicationController
 
   before_action :authenticate
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_project, only: [:update, :show, :edit, :destroy]
 
     def index
-      @projects = current_user.projects
+      @projects = Project.all
     end
 
     def show
@@ -48,6 +48,7 @@ class ProjectsController < ApplicationController
     private
 
     def set_project
+      @project = Project.find(params[:id])
       unless @project && @project.users.include?(current_user)
       redirect_to projects_path, alert: 'You do not have access to that project.'
     end
