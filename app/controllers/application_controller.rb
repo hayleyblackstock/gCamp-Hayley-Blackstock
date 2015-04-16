@@ -8,14 +8,28 @@ class ApplicationController < ActionController::Base
     User.find_by_id(session[:user_id])
   end
 
+  helper_method :current_user
+
   def authenticate
     if not current_user
       redirect_to signup_path, alert: 'Not signed in!'
     end
   end
 
+  def current_role
+    if session[:user_id]
+      @current_role ||= User.find(session[:user_id]).role
+    else
+      @current_role = "visitor"
+    end
+  end
+  helper_method :current_role
 
-
-  helper_method :current_user
+  def admin_user
+    if current_role != "admin"
+      redirect_to root_path, alert: "You don't have access!"
+    end
+  end
+  helper_method :admin_user
 
 end
