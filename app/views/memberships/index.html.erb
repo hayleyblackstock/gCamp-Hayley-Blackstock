@@ -26,30 +26,34 @@
     <%= f.select(:role, [["Member", :member],["Owner", :owner]], {include_blank: false}, {class:"form-control"}) %>
 
     <%= f.submit "Update", method: :update, class:"btn btn-info" %>
+    <% if membership.role == "owner" && @project.memberships.where(role: 1).count == 1 %>
+    <span>You are the last owner. </span>
+    <% else %>
     <%= link_to '', project_membership_path(@project, membership), method: :delete, data: { confirm: 'Are you sure?' }, :class => "glyphicon glyphicon-remove" %>
-  </div><br>
 
+  <% end %>
+</div><br>
   <% end %>
   <% end %>
 </div><br>
 
-  <% else %>
-  <table class="table">
-    <tbody>
-      <% @project.memberships.each do |membership| %>
-      <tr>
-        <td><%= membership.user.full_name %></td>
-        <td><%= membership.role %></td>
-        <td>
-          <% if membership.user.id == current_user.id %>
-          <%= link_to '<span class="glyphicon glyphicon-remove" aria-hidden=true></span>'.html_safe, project_membership_path(@project, membership), method: :delete, data: { confirm: "Are you sure you want to delete?"} %>
-        </td>
-      </tr>
+<% else %>
+<table class="table">
+  <tbody>
+    <% @project.memberships.each do |membership| %>
+    <tr>
+      <td><%= membership.user.full_name %></td>
+      <td><%= membership.role %></td>
+      <td>
+        <% if membership.user.id == current_user.id %>
+        <%= link_to '<span class="glyphicon glyphicon-remove" aria-hidden=true></span>'.html_safe, project_membership_path(@project, membership), method: :delete, data: { confirm: "Are you sure you want to delete?"} %>
+      </td>
+    </tr>
 
 
-    </tbody>
+  </tbody>
 
-  </table>
-  <% end %>
-  <% end %>
-  <% end %>
+</table>
+<% end %>
+<% end %>
+<% end %>
