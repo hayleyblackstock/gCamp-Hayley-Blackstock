@@ -28,9 +28,10 @@
     <%= f.submit "Update", method: :update, class:"btn btn-info" %>
     <%= link_to '', project_membership_path(@project, membership), method: :delete, data: { confirm: 'Are you sure?' }, :class => "glyphicon glyphicon-remove" %>
   </div><br>
-  </div><br>
+
   <% end %>
   <% end %>
+</div><br>
 
   <% else %>
   <table class="table">
