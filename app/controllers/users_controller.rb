@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :authenticate
+  before_action :authenticate, only: [:index, :show]
 
   def index
     @users = User.all
@@ -16,6 +16,9 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    unless current_user.id == @user.id
+      render_404
+    end
   end
 
   def create
@@ -51,5 +54,13 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :admin)
   end
+
+  def render_404
+  respond_to do |format|
+    format.html { render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found }
+    format.xml  { head :not_found }
+    format.any  { head :not_found }
+  end
+end
 
 end
