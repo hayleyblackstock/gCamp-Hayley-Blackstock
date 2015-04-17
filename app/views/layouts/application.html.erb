@@ -69,56 +69,56 @@
 
     <%= yield %>
   </div>
-  </body>
+</body>
 
-  <div class="container">
-    <footer>
-      <% if current_user %>
+<div class="container">
+  <footer>
+    <% if current_user %>
 
 
-      <div class="row">
-        <div class="text-center">
-          <a href="/">Home</a>
-          |
-          <a href="/about">About</a>
-          |
-          <a href="/terms">Terms</a>
-          |
-          <a href="/faq">FAQ</a>
-        </div>
+    <div class="row">
+      <div class="text-center">
+        <a href="/">Home</a>
+        |
+        <a href="/about">About</a>
+        |
+        <a href="/terms">Terms</a>
+        |
+        <a href="/faq">FAQ</a>
       </div>
-      <% else %>
-      <div class="row">
-        <div class="col-md-6">
-          <a href="/about">About</a>
-          |
-          <a href="/terms">Terms</a>
-          |
-          <a href="/faq">FAQ</a>
-          |
-          <a href="/users">Users</a>
-          |
-          <a href="/projects">Projects</a>
-        </div>
-
-        <div class="col-md-6 text-right">
-          <a href="https://www.linkedin.com/in/hayleyblackstock">
-            <img alt="LinkedIn" class="img-footer" <%= image_tag('LinkedIn.png') %>
-          </a>
-          <a href="https://github.com/hayleyblackstock">
-            <img alt="Github" class="img-footer" <%= image_tag('GitHub.png') %>
-          </a>
-          <a href="https://twitter.com/hkblackstock">
-            <img alt="Twitter" class="img-footer" <%= image_tag('Twitter.png') %>
-          </a>
-          <a href="https://students.gschool.it/cohorts/9/students/204">
-            <img alt="Galvanize g" class="img-footer" <%= image_tag('gSchool.png') %>
-          </a>        </div>
-        </div>
-
-        <% end %>
-      </footer>
     </div>
+    <% else %>
+    <div class="row">
+      <div class="col-md-6">
+        <a href="/about">About</a>
+        |
+        <a href="/terms">Terms</a>
+        |
+        <a href="/faq">FAQ</a>
+        |
+        <a href="/users">Users</a>
+        |
+        <a href="/projects">Projects</a>
+      </div>
+
+      <div class="col-md-6 text-right">
+        <a href="https://www.linkedin.com/in/hayleyblackstock">
+          <img alt="LinkedIn" class="img-footer" <%= image_tag('LinkedIn.png') %>
+        </a>
+        <a href="https://github.com/hayleyblackstock">
+          <img alt="Github" class="img-footer" <%= image_tag('GitHub.png') %>
+        </a>
+        <a href="https://twitter.com/hkblackstock">
+          <img alt="Twitter" class="img-footer" <%= image_tag('Twitter.png') %>
+        </a>
+        <a href="https://students.gschool.it/cohorts/9/students/204">
+          <img alt="Galvanize g" class="img-footer" <%= image_tag('gSchool.png') %>
+        </a>        </div>
+      </div>
+
+      <% end %>
+    </footer>
+  </div>
 
 
   </html>
