@@ -1,6 +1,6 @@
 <div class="page-header">
   <div class="pull-right">
-    <% if current_user.project_owner(@project) %>
+    <% if current_user.project_owner(@project) || current_role == true %>
     <%= link_to 'Edit', edit_project_path(@project), :class => "btn btn-info" %>
     <% end %>
   </div>
@@ -19,7 +19,7 @@
 <div><%= link_to pluralize(@project.tasks.count, "Task"), project_tasks_path(@project, @task)%></div>
 <div><%= link_to pluralize(@project.memberships.count, "Membership"), project_memberships_path(@project, @membership)%></div>
 
-<% if current_user.project_owner(@project)%>
+<% if current_user.project_owner(@project) || current_role == true%>
 <div class="well">
   <h4> Delete </h4>
   <div> Deleting this project will also delete <%= pluralize(@project.memberships.count, "Membership") %>, <%=  pluralize(@project.tasks.count, "Task") %> and associated comments</div>

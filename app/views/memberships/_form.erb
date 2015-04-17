@@ -1,4 +1,4 @@
-<% if current_user.project_owner(@project) %>
+<% if current_user.project_owner(@project) || current_role == true %>
 
 <div class="well form-inline">
   <%= form_for [@project, @membership] do |f| %>

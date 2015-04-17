@@ -14,7 +14,7 @@
 
 <%= render 'form' %>
 
-<% if current_user.project_owner(@project) %>
+<% if current_user.project_owner(@project) || current_role == true %>
 <div class="form-inline">
   <% @project.memberships.each do |membership| %>
   <%= form_for [@project, membership] do |f| %>
@@ -45,7 +45,7 @@
       <td><%= membership.user.full_name %></td>
       <td><%= membership.role %></td>
       <td>
-        <% if membership.user.id == current_user.id %>
+        <% if membership.user.id == current_user.id || current_role == true%>
         <%= link_to '<span class="glyphicon glyphicon-remove" aria-hidden=true></span>'.html_safe, project_membership_path(@project, membership), method: :delete, data: { confirm: "Are you sure you want to delete?"} %>
       </td>
     </tr>
