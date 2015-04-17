@@ -1,5 +1,5 @@
 <div class="page-header">
-<h1><%= @project.name %>: Manage Members</h1>
+  <h1><%= @project.name %>: Manage Members</h1>
 </div>
 
 <div class="breadcrumb">
@@ -14,23 +14,41 @@
 
 <%= render 'form' %>
 
-
+<% if current_user.project_owner(@project) %>
 <div class="form-inline">
   <% @project.memberships.each do |membership| %>
   <%= form_for [@project, membership] do |f| %>
 
-    <div class="form-group col-md-2">
-      <%= link_to membership.user.full_name, user_path(membership.user) %>
-    </div>
-    <div class="form-group">
-      <%= f.select(:role, [["Member", :member],["Owner", :owner]], {include_blank: false}, {class:"form-control"}) %>
+  <div class="form-group col-md-2">
+    <%= link_to membership.user.full_name, user_path(membership.user) %>
+  </div>
+  <div class="form-group">
+    <%= f.select(:role, [["Member", :member],["Owner", :owner]], {include_blank: false}, {class:"form-control"}) %>
 
-      <%= f.submit "Update", method: :update, class:"btn btn-info" %>
-      <%= link_to '', project_membership_path(@project, membership), method: :delete, data: { confirm: 'Are you sure?' }, :class => "glyphicon glyphicon-remove" %>
-
-    </div><br>
-
-
+    <%= f.submit "Update", method: :update, class:"btn btn-info" %>
+    <%= link_to '', project_membership_path(@project, membership), method: :delete, data: { confirm: 'Are you sure?' }, :class => "glyphicon glyphicon-remove" %>
+  </div><br>
+  </div><br>
   <% end %>
   <% end %>
-</div>
+
+  <% else %>
+  <table class="table">
+    <tbody>
+      <% @project.memberships.each do |membership| %>
+      <tr>
+        <td><%= membership.user.full_name %></td>
+        <td><%= membership.role %></td>
+        <td>
+          <% if membership.user.id == current_user.id %>
+          <%= link_to '<span class="glyphicon glyphicon-remove" aria-hidden=true></span>'.html_safe, project_membership_path(@project, membership), method: :delete, data: { confirm: "Are you sure you want to delete?"} %>
+        </td>
+      </tr>
+
+
+    </tbody>
+
+  </table>
+  <% end %>
+  <% end %>
+  <% end %>

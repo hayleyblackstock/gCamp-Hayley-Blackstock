@@ -1,3 +1,4 @@
+<% if current_user.project_owner(@project) %>
 
 <div class="well form-inline">
   <%= form_for [@project, @membership] do |f| %>
@@ -12,3 +13,4 @@
 
   <% end %>
 </div>
+<% end %>
