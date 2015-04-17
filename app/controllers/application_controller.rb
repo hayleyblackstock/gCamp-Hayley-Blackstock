@@ -12,7 +12,8 @@ class ApplicationController < ActionController::Base
 
   def authenticate
     if not current_user
-      redirect_to signup_path, alert: 'Not signed in!'
+      session[:previous_url] = request.fullpath
+      redirect_to signin_path, alert: 'Not signed in!'
     end
   end
 
@@ -31,5 +32,7 @@ class ApplicationController < ActionController::Base
     end
   end
   helper_method :admin_user
+
+
 
 end
