@@ -12,10 +12,6 @@ describe 'User can CRUD projects' do
     fill_in 'user[password_confirmation]', with: "test"
     click_on "Create User"
 
-    click_on "Projects"
-
-    click_on "New Project"
-
     fill_in 'project[name]', with: "Test"
 
     click_on "Create Project"
@@ -34,17 +30,15 @@ describe 'User can CRUD projects' do
     fill_in 'user[password_confirmation]', with: "test"
     click_on "Create User"
 
-    visit '/projects'
-
-    click_on "New Project"
-
-    fill_in 'project[name]', with: "Test"
+    fill_in 'project[name]', with: "Help"
 
     click_on "Create Project"
 
-    click_on "Test"
+    visit '/users'
 
-    expect(page).to have_content("Test")
+    click_link('Help')
+
+    expect(page).to have_content("Help")
   end
 
   scenario 'User can edit a project' do
@@ -57,9 +51,11 @@ describe 'User can CRUD projects' do
     fill_in 'user[password_confirmation]', with: "test"
     click_on "Create User"
 
-  @project = Project.create(name: "Test")
+    fill_in 'project[name]', with: "Test"
 
-    visit '/projects'
+    click_on "Create Project"
+
+    visit '/users'
 
     click_on "Test"
 
@@ -83,9 +79,13 @@ describe 'User can CRUD projects' do
     fill_in 'user[password_confirmation]', with: "test"
     click_on "Create User"
 
-    @project = Project.create(name: "Test")
+    fill_in 'project[name]', with: "Test"
 
-    visit '/projects'
+    click_on "Create Project"
+
+    visit '/users'
+
+    click_on "Test"
 
     click_on "Delete"
 

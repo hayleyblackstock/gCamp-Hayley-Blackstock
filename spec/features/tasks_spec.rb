@@ -11,12 +11,12 @@ require 'rails_helper'
     fill_in 'user[password]', with: "test"
     fill_in 'user[password_confirmation]', with: "test"
     click_on "Create User"
-    click_on "Projects"
-    click_on "New Project"
     fill_in 'project[name]', with: "Test"
     click_on "Create Project"
+    visit '/'
     click_on "Test"
-    click_on "0 Tasks"
+
+    click_on "0 Task"
 
     click_on "New Task"
 
@@ -25,7 +25,7 @@ require 'rails_helper'
     click_on "Create Task"
 
     expect(page).to have_content("Test")
-    expect(page).to have_content("Task was successfully created.")
+    expect(page).to have_content("Task was successfully created!")
   end
 
   scenario 'User can edit a task' do
@@ -37,10 +37,9 @@ require 'rails_helper'
     fill_in 'user[password]', with: "test"
     fill_in 'user[password_confirmation]', with: "test"
     click_on "Create User"
-    click_on "Projects"
-    click_on "New Project"
     fill_in 'project[name]', with: "Test"
     click_on "Create Project"
+    visit '/'
     click_on "Test"
     click_on "0 Tasks"
     click_on "New Task"
@@ -53,7 +52,7 @@ require 'rails_helper'
 
     click_on "Update Task"
 
-    expect(page).to have_content("Task was successfully updated.")
+    expect(page).to have_content("Task was successfully updated!")
 
   end
 
@@ -66,22 +65,17 @@ require 'rails_helper'
     fill_in 'user[password]', with: "test"
     fill_in 'user[password_confirmation]', with: "test"
     click_on "Create User"
-    click_on "Projects"
-    click_on "New Project"
     fill_in 'project[name]', with: "Test"
     click_on "Create Project"
+    visit '/'
     click_on "Test"
     click_on "0 Tasks"
     click_on "New Task"
     fill_in 'task[description]', with: "Test"
     click_on "Create Task"
-    click_on "Edit"
+    click_on ''
 
-    click_on "Cancel"
-
-    click_on "Delete"
-
-    expect(page).to have_content("Task was successfully destroyed.")
+    expect(page).to have_content("Task was successfully destroyed!")
 
   end
 

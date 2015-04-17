@@ -11,7 +11,7 @@ describe 'User can signup' do
     fill_in 'user[password]', with: "test"
     fill_in 'user[password_confirmation]', with: "test"
     click_on "Create User"
-    expect(page).to have_content("gCamp Your life, organized.")
+    expect(page).to have_content("Projects")
   end
 
 end

@@ -64,18 +64,6 @@ describe 'User can CRUD Users' do
     fill_in 'user[password_confirmation]', with: "test"
     click_on "Create User"
     click_on "Users"
-
-    click_on "New Users"
-
-    fill_in 'user[first_name]', with: "Bobby"
-    fill_in 'user[last_name]', with: "Blackstock"
-    fill_in 'user[email]', with: "BobbyBlackstock@hotmail.com"
-    fill_in 'user[password]', with: "test"
-    fill_in 'user[password_confirmation]', with: "test"
-
-    click_on "Create User"
-
-    click_on "Bobby Blackstock"
     click_on "Edit"
 
     fill_in 'user[first_name]', with: "Katherine"
@@ -95,10 +83,10 @@ describe 'User can CRUD Users' do
     fill_in 'user[password_confirmation]', with: "test"
     click_on "Create User"
     click_on "Users"
+    click_on "Edit"
+    click_on 'Delete'
 
-    click_on "Delete"
-
-    expect(page).to have_content("User was successfully destroyed.")
+    expect(page).to have_content("gCamp")
 
   end
 
