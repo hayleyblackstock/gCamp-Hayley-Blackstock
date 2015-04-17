@@ -19,10 +19,14 @@
     <tr>
       <td><%= link_to user.full_name, user %></td>
 
-      <% if user == current_user || current_role == true  %>
+      <% if current_role == true || user.projects.any? { |project| project.users.include?(user)} %>
       <td><%= mail_to user.email%></td>
-      <td class="text-right"><%= link_to 'Edit', edit_user_path(user), :class => "btn btn-info" %></td>
+      <td></td>
+      <% end %>
 
+      <% if current_role == true || user == current_user %>
+      <td class="text-right"><%= link_to 'Edit', edit_user_path(user), :class => "btn btn-info" %></td>
+      <td></td>
       <% else %>
 
       <td></td>
