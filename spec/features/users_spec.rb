@@ -86,7 +86,7 @@ describe 'User can CRUD Users' do
     click_on "Edit"
     click_on 'Delete'
 
-    expect(page).to have_content("gCamp")
+    expect(page).to have_content("Taskly")
 
   end
 

@@ -15,7 +15,7 @@ describe 'permissions for different users' do
     within('form') do
       click_on 'Sign In'
     end
-    expect(page).to have_content 'Welcome back to gCamp!'
+    expect(page).to have_content 'Welcome back to Taskly!'
   end
 
   scenario 'redirect to projects page after sign in' do

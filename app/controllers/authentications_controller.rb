@@ -9,9 +9,9 @@ def create
   if @user && @user.authenticate(params[:password])
     session[:user_id] = @user.id
     if session[:previous_url] == nil
-    redirect_to projects_path, notice: 'Welcome back to gCamp!'
+    redirect_to projects_path, notice: 'Welcome back to Taskly!'
     else
-    redirect_to session[:previous_url], notice: 'Welcome back to gCamp!'
+    redirect_to session[:previous_url], notice: 'Welcome back to Taskly!'
     session[:previous_url] = nil
   end
   else

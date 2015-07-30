@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'User can signup' do
 
-  scenario 'User signup for gCamp' do
+  scenario 'User signup for Taskly' do
     visit '/'
     click_on "Sign Up"
     fill_in 'user[first_name]', with: "Hayley"

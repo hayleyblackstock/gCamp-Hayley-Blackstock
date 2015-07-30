@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'User can signin' do
 
-  scenario 'User signin for gCamp' do
+  scenario 'User signin for Taskly' do
     visit '/'
     click_on "Sign Up"
     fill_in 'user[first_name]', with: "Hayley"
@@ -18,7 +18,7 @@ describe 'User can signin' do
     click_button "Sign In"
     expect(page).to have_content("Hayley Blackstock")
     expect(page).to have_content("Sign Out")
-    expect(page).to have_content("Welcome back to gCamp!")
+    expect(page).to have_content("Welcome back to Taskly!")
 
   end
 

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'User can signout' do
 
-  scenario 'User signout of gCamp' do
+  scenario 'User signout of Taskly' do
     visit '/'
     click_on "Sign Up"
     fill_in 'user[first_name]', with: "Hayley"
